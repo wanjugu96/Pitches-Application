@@ -8,9 +8,16 @@
         <div class="col-md-4 my-4 4 pb-4 ">
         <h2 class="pb-4">Your details</h2>
         {%if user.profilepicpath%}
-        <img src="{{url_for('static',filename=user.profilepicpath)}}" alt="" class="img_thumbnail">
+        <img src="{{url_for('static',filename=user.profilepicpath)}}" alt="" class="img_thumbnail" style="width:300px;height:400px;>
         {%else %}
         <p>No profile pic</p>
+        {%endif%}
+        {%if user== current_user%}
+        <form action ="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype="multipart/form-data">
+        <input type="file"  name="photo" class="form-control" required>
+        <input type="submit">
+
+
         {%endif%}
             <h6>Username:</h6>
             <p>{{user.username}}</p>

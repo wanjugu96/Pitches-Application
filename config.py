@@ -11,6 +11,7 @@ class ProdCofig(Config):
 class DevConfig(Config):
     SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://postgres:Serum2551@localhost/pitches'
     SECRET_KEY = os.environ.get('SECRET_KEY')
+    UPLOADED_PHOTOS_DEST='app/static/photos'
 
     DEBUG=True
     TEMPLATES_AUTO_RELOAD = True
