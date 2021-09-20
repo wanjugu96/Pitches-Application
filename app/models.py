@@ -13,6 +13,7 @@ class User(db.Model,UserMixin):
     username=db.Column(db.String(255))
     email=db.Column(db.String(255))
     pass_secure=db.Column(db.String(255))
+    bio=db.Column(db.string(255))
     comments=db.relationship('Comment',backref='users',lazy='dynamic')
     pitch=db.relationship('Pitch',backref='users',lazy='dynamic')
 
