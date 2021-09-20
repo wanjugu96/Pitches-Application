@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{%block styles%}
+{{super()}}
+{%endblock%}
+{%block content%}
+<div class="container">
+    <div class="row ">
+        <div class="col-md-4 my-4 4 pb-4 ">
+        <h2 class="pb-4">Your details</h2>
+        {%if user.profilepicpath%}
+        <img src="{{url_for('static',filename=user.profilepicpath)}}" alt="" class="img_thumbnail">
+        {%else %}
+        <p>No profile pic</p>
+        {%endif%}
+            <h6>Username:</h6>
+            <p>{{user.username}}</p>
+            <h6>Email:</h6>
+            <p>{{user.email}}</p>
+            <h6>Bio:</h6>
+            {%if user.bio%}
+            <p>{{user.bio}}</p>
+            {%else%}
+            <P>{{user.username}} has no bio</p>
+            {%endif%}
+            {% if user == current_user %}
+    <a href="{{url_for('main.update_profile',uname=user.username)}}">Edit profile</a>
+{% endif %}
+
+
+        </div>
+        <div class="col-md-8 my-4 pb-4">
+        <h2 class="pb-4" ><center>Your pitches</center></h2>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
