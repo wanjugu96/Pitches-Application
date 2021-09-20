@@ -3,9 +3,11 @@ from flask import Flask
 from config import  config_options
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_bootstrap import Bootstrap
 #from app.models import User
 # from app import login
 
+bootstrap=Bootstrap()
 db=SQLAlchemy()
 login_manager=LoginManager()
 login_manager.session_protection='strong'
@@ -20,7 +22,7 @@ def create_app(config_name):
 
 
     #initializing flask extensions
-    #eg  bootstrap.init_app(app)
+    bootstrap.init_app(app)
     db.init_app(app)
 
     login_manager.init_app(app)

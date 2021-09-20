@@ -1,2 +1,28 @@
-{% extends 'base.html'%}
+{% extends 'base.html'%} {%block styles%} {{super()}}
+<link href="\static\css\index.css" rel="stylesheet"> {%endblock%} {%block content%}
+<div class="container">
+    <div class="row mt-3 words">
+        <div class="col-md-6">
+            <img src="/static/images/think.gif" alt="Computer man" style="width:448px;height:448px;">
+        </div>
+        <div class="col-md-6 mt-3 pt-2">
+            <h1 class="title">
+                <center>Pitchy</center>
+            </h1>
+            <br></br>
+            <h5>In life, you only have 60 seconds to impress someone. How do we make sure that you use your 1 minute to actually say something meaningful?</h5>
+            <br></br>
 
+            <h5> Pitchy gives you a chance to view pitches by others and even gives you chance to comment on your favourite ones.</h5>
+
+            <h5>Select a category below to view the pitches and submit your own too. </h5>
+
+            <button type="button" class="btn btn-primary categorybutton  ">Business</button>
+            <button type="button" class="btn btn-secondary categorybutton">Sales</button>
+            <button type="button" class="btn btn-secondary categorybutton">Job interview</button>
+            <button type="button" class="btn btn-secondary categorybutton">Pickup lines</button>
+        </div>
+    </div>
+</div>
+
+<a href="{{url_for('main.comment')}}">comment please</a> {%endblock%}

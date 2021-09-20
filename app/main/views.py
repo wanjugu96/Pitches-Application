@@ -7,7 +7,8 @@ from flask_login import login_required
 def index():
     return render_template('index.html')
 
-# @main.route('/category/comments/new/<int:id>',methods=['GET','POST'])
-# def comment():
-#     @login_required
-#     pass
+@main.route('/comments',methods=['GET','POST'])
+@login_required
+def comment():
+    return render_template('comments.html')
+
