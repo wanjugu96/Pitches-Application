@@ -41,6 +41,7 @@ class Comment(db.Model):
     comment=db.Column(db.String(255))
     user_id=db.Column(db.Integer,db.ForeignKey('users.id'))
     pitch_id=db.Column(db.Integer,db.ForeignKey('pitches.id'))
+    name=db.Column(db.String(255))
 
     def __repr__(self):
         return f'User {self.comment}'  

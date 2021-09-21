@@ -16,3 +16,11 @@ class submitpitchform(FlaskForm):
 
     submit=SubmitField('Submit')
 
+class submitcommentform(FlaskForm):
+    
+    comment=TextAreaField('Your comment',validators=[Required()])
+    
+    submit=SubmitField('Submit')
+
+
+

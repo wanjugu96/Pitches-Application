@@ -35,8 +35,20 @@
 
 
         </div>
-        <div class="col-md-8 my-4 pb-4">
+        <div class="col-md-8 my-4 pb-4 pr-5">
         <h2 class="pb-4" ><center>Your pitches</center></h2>
+        {%if pitches:%}
+        {%for pitch in pitches%}
+        <h4>{{pitch.title}}</h4>
+        <h6>{{pitch.pitch}}</h6>
+        <h6>{{pitch.category}}</h6>
+        {%endfor%}
+
+
+        {%else%}
+        <br></br>
+        <h6>you have no pitches on the App</h6>
+        {%endif%}
         </div>
     </div>
 </div>

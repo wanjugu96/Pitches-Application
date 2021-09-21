@@ -2,17 +2,23 @@
 {% extends 'base.html'%}
 {% block content%}
 
-<a href="{{ url_for('main.submitpitch')}}">Submit Pitch</a>
 
 <div class="container">
+
+
 {%if Allpitches:%}
 <h1>{{category}} Pitches</h1>
 {% for pitch in Allpitches%}
 
 <h4>{{pitch.title}}</h4>
-<p>{{pitch.pitch}}</p>
-<p>submitted by{{pitch.name}}</p>
-<p>{{pitch.category}}</p>
+<h4>pitch id is {{pitch.id}}</h4>
+<p>pitch is : {{pitch.pitch}}</p>
+<p>submitted by: {{pitch.name}}</p>
+<p>Category is :{{pitch.category}}</p>
+
+
+<a href="{{url_for('main.comment',category=pitch.category,pitchid=pitch.id)}}">comment on pitch</a>
+
 <br></br>
 
 {%endfor%}

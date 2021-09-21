@@ -41,13 +41,17 @@
                     
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('auth.logout')}}">Signout</a>
-                    </li> 
+                    </li>
+                    <li>
+                    <button type="button" class="btn btn-danger categorybutton"><a href="{{ url_for('main.submitpitch')}}">Submit Pitch</a></button>                  
+                    </li>
                     
                     {%else%}
                         <li class="nav-item">
                         <a class="nav-link" href="{{url_for('auth.login')}}">login</a>
                     </li>
-                    {%endif%}                   
+                    {%endif%} 
+                    
                      </ul>
                 
 

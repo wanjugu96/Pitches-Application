@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% block content%}
+
+<h1>{{pitch.category}} Pitches</h1>
+
+<h4>{{pitch.title}}</h4>
+<h4>pitch id is {{pitch.id}}</h4>
+<p>pitch is : {{pitch.pitch}}</p>
+<p>submitted by: {{pitch.name}}</p>
+<p>Category is :{{pitch.category}}</p>
+<h6>Comments<h6>
+{%for comment in comments%}
+<p>Comment is {{comment.comment}}</p>
+<p>Comment  by {{comment.name}}
+{%endfor%}
+{%endblock%}

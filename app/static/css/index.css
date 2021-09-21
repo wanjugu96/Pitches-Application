@@ -9,12 +9,13 @@
 }
 
 .categorybutton {
-    background-color: #0d21a1;
+    background-color: #2b3cb1;
     border-radius: 5%;
     padding-right: 15px;
+    color: black;
 }
 
 .title {
     text-decoration: underline;
-    color: #0d21a1;
+    color: #2b3cb1;
 }
