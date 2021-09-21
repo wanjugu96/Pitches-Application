@@ -5,7 +5,7 @@ from flask_migrate import Migrate, MigrateCommand
 
 
 #create app instance
-app=create_app('production')
+app=create_app('development')
 
 manager=Manager(app)
 #the add_command method to create a new command 'server'
