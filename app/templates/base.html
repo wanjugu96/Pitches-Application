@@ -31,6 +31,11 @@
                     </ul>
         
                     <ul class="nav navbar-nav navbar-right">
+                    <li>
+                    <a class="btn btn-primary " href="{{ url_for('main.submitpitch')}}" role="button">Submit Pitch</a>
+
+                    </li>
+                    
                     {% if current_user.is_authenticated%}
                      <li class="nav-item">
                         <a class="nav-link" href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a>
@@ -39,9 +44,6 @@
                     
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('auth.logout')}}">Signout</a>
-                    </li>
-                    <li>
-                    <button type="button" class="btn btn-danger categorybutton"><a href="{{ url_for('main.submitpitch')}}">Submit Pitch</a></button>                  
                     </li>
                     
                     {%else%}

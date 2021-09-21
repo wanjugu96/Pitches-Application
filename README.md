@@ -9,7 +9,7 @@ This is an application that allows users to use that one minute wisely. The user
 
 ## Live Demo
 
-Click [Link](https://news-bulletins.herokuapp.com/) to visit the site
+Click [Link](https://pitches-application.herokuapp.com/) to visit the site
 
 
 ## User Story
