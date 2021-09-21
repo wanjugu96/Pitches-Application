@@ -10,14 +10,16 @@
 <h1>{{category}} Pitches</h1>
 {% for pitch in Allpitches%}
 
-<h4>{{pitch.title}}</h4>
-<h4>pitch id is {{pitch.id}}</h4>
-<p>pitch is : {{pitch.pitch}}</p>
-<p>submitted by: {{pitch.name}}</p>
-<p>Category is :{{pitch.category}}</p>
+<div class="jumbotron">
+  <h1 class="display-4">{{pitch.title}}</h1>
+  <p class="lead">{{pitch.pitch}}</p>
+  <hr class="my-4">
+  <p>submitted by: {{pitch.name}}</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{{url_for('main.comment',category=pitch.category,pitchid=pitch.id)}}" role="button">Comment on pitch</a>
+  </p>
+</div>
 
-
-<a href="{{url_for('main.comment',category=pitch.category,pitchid=pitch.id)}}">comment on pitch</a>
 
 <br></br>
 
