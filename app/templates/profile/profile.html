@@ -39,9 +39,18 @@
         <h2 class="pb-4" ><center>Your pitches</center></h2>
         {%if pitches:%}
         {%for pitch in pitches%}
-        <h4>{{pitch.title}}</h4>
-        <h6>{{pitch.pitch}}</h6>
-        <h6>{{pitch.category}}</h6>
+        <div class="jumbotron jumbos">
+  <h1 class="display-4">{{pitch.title}}</h1>
+  <p class="lead">{{pitch.pitch}}</p>
+  <hr class="my-4">
+  <p>{{pitch.category}}</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/" role="button">Comment on pitch</a>
+                                            
+
+  </p>
+</div>
+    
         {%endfor%}
 
 

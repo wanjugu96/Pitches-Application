@@ -1,16 +1,42 @@
 {% extends 'base.html'%}
-{% block content%}
+{%block styles%}
 
-<h1>{{pitch.category}} Pitches</h1>
-
-<h4>{{pitch.title}}</h4>
-<h4>pitch id is {{pitch.id}}</h4>
-<p>pitch is : {{pitch.pitch}}</p>
-<p>submitted by: {{pitch.name}}</p>
-<p>Category is :{{pitch.category}}</p>
-<h6>Comments<h6>
-{%for comment in comments%}
-<p>Comment is {{comment.comment}}</p>
-<p>Comment  by {{comment.name}}
-{%endfor%}
+<link href="\static\css\index.css" rel="stylesheet">
+{{super()}}
+    
 {%endblock%}
+{% block content%}
+<div class="container">
+    <h1>{{pitch.category}} Pitch</h1>
+    <div class="jumbotron jumbos ">
+        <h1 class="display-4">{{pitch.title}}</h1>
+        <p class="lead">{{pitch.pitch}}</p>
+        <hr class="my-4">
+        <p>Submitted by : {{pitch.name}}</p>
+        <p class="lead">
+                <a class="btn btn-primary btn-lg" href="{{url_for('main.comment',category=pitch.category,pitchid=pitch.id)}}" role="button">Comment on pitch</a>
+
+        </p>
+        <hr class="my-4">
+        <h4>Comments: </h4>
+            <div class="row">
+  
+            {%for comment in comments%}
+            <div class="col-md-3 comment">
+                
+                <p>{{comment.comment}}</p>
+                <p>Comment by: ~{{comment.name}}
+                
+            </div>
+            {%endfor%}
+        </div>
+
+        
+        
+                
+    
+    </div>
+
+
+    {%endblock%}
+</div>

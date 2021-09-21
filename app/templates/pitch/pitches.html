@@ -7,16 +7,19 @@
 
 
 {%if Allpitches:%}
-<h1>{{category}} Pitches</h1>
+<h1 >{{category}} Pitches</h1>
 {% for pitch in Allpitches%}
 
-<div class="jumbotron">
-  <h1 class="display-4">{{pitch.title}}</h1>
+<div class="jumbotron jumbos">
+  <h1 class="display-4 title">{{pitch.title}}</h1>
   <p class="lead">{{pitch.pitch}}</p>
   <hr class="my-4">
   <p>submitted by: {{pitch.name}}</p>
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="{{url_for('main.comment',category=pitch.category,pitchid=pitch.id)}}" role="button">Comment on pitch</a>
+  </p>
+   <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{{url_for('main.singlepitch',category=pitch.category,pitchid=pitch.id)}}" role="button">view more</a>
   </p>
 </div>
 

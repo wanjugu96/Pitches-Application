@@ -17,5 +17,24 @@
 
 .title {
     text-decoration: underline;
-    color: #2b3cb1;
+    color: white;
+}
+
+.jumbos {
+    background-color: #0E1C36;
+    color: #eef0f2;
+    box-shadow: -15px -9px 17px 1px rgba(0, 0, 0, 0.63) inset;
+    -webkit-box-shadow: -15px -9px 17px 1px rgba(0, 0, 0, 0.63) inset;
+    -moz-box-shadow: -15px -9px 17px 1px rgba(0, 0, 0, 0.63) inset;
+    padding: 10px;
+}
+
+.comment {
+    background-color: #FFEDE1;
+    margin: 10px;
+    color: #0E1C36;
+}
+
+.container {
+    background-color: #AFCBFF;
 }
