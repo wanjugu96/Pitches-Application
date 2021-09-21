@@ -15,8 +15,8 @@ class User(db.Model,UserMixin):
     pass_secure=db.Column(db.String(255))
     bio=db.Column(db.String(255))
     profilepicpath=db.Column(db.String(255))
-    comments=db.relationship('Comment',backref='users',lazy='dynamic')
-    pitch=db.relationship('Pitch',backref='users',lazy='dynamic')
+    comments=db.relationship('Comment',backref='user',lazy='dynamic')
+    pitches=db.relationship('Pitch',backref='user',lazy=True)
 
     @property
     def password(self):
@@ -51,10 +51,9 @@ class Pitch(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     title=db.Column(db.String(255))
     category=db.Column(db.String(255))
-    pitch=db.Column(db.String(255))
+    pitch=db.Column(db.Text(1000000))
     user_id=db.Column(db.Integer,db.ForeignKey('users.id'))
+    name=db.Column(db.String(255))
     comment=db.relationship('Comment',backref='pitches',lazy='dynamic')
 
-
-    def __repr__(self):
-        return f'User {self.title}'
+   

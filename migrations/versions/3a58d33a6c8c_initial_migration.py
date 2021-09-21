@@ -1,8 +1,8 @@
-"""ionitial migration
+"""Initial Migration
 
-Revision ID: b278a65cc670
+Revision ID: 3a58d33a6c8c
 Revises: 
-Create Date: 2021-09-19 12:26:30.507008
+Create Date: 2021-09-21 12:54:25.387853
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'b278a65cc670'
+revision = '3a58d33a6c8c'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -22,7 +22,9 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('username', sa.String(length=255), nullable=True),
     sa.Column('email', sa.String(length=255), nullable=True),
-    sa.Column('password', sa.String(length=255), nullable=True),
+    sa.Column('pass_secure', sa.String(length=255), nullable=True),
+    sa.Column('bio', sa.String(length=255), nullable=True),
+    sa.Column('profilepicpath', sa.String(length=255), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('pitches',
@@ -31,6 +33,7 @@ def upgrade():
     sa.Column('category', sa.String(length=255), nullable=True),
     sa.Column('pitch', sa.String(length=255), nullable=True),
     sa.Column('user_id', sa.Integer(), nullable=True),
+    sa.Column('name', sa.String(length=255), nullable=True),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )

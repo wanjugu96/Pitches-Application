@@ -1,0 +1,24 @@
+
+{% extends 'base.html'%}
+{% block content%}
+
+<a href="{{ url_for('main.submitpitch')}}">Submit Pitch</a>
+
+<div class="container">
+{%if Allpitches:%}
+<h1>{{category}} Pitches</h1>
+{% for pitch in Allpitches%}
+
+<h4>{{pitch.title}}</h4>
+<p>{{pitch.pitch}}</p>
+<p>submitted by{{pitch.name}}</p>
+<p>{{pitch.category}}</p>
+<br></br>
+
+{%endfor%}
+
+{%else%}
+<p>No pitches available in this category</p>
+{%endif%}
+{%endblock%}
+</div>

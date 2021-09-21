@@ -2,4 +2,8 @@
 
 {%block content%}
 <h1>comments</h2>
+{% if current_user.is_authenticated %}
+  Hi {{ current_user.username }}!
+{% endif %}
+
 {%endblock%}

@@ -9,6 +9,7 @@
             <h1 class="title">
                 <center>Pitchy</center>
             </h1>
+            <a href="{{url_for('main.comment')}}">comment</a>
             <br></br>
             <h5>In life, you only have 60 seconds to impress someone. How do we make sure that you use your 1 minute to actually say something meaningful?</h5>
             <br></br>
@@ -16,11 +17,17 @@
             <h5> Pitchy gives you a chance to view pitches by others and even gives you chance to comment on your favourite ones.</h5>
 
             <h5>Select a category below to view the pitches and submit your own too. </h5>
+            <form action="" method="post" name="source">
+            <input type="submit" class="btn btn-info  categorybutton" name="category" value="Business" />
+            <input type="submit" class="btn btn-info  categorybutton" name="category" value="Sales" />
+            <input type="submit" class="btn btn-info  categorybutton" name="category" value="Job Interview" />
+            <input type="submit" class="btn btn-info  categorybutton" name="category" value="Pickup Lines" />
 
-            <button type="button" class="btn btn-primary categorybutton  ">Business</button>
+            <!--<button type="button" class="btn btn-primary categorybutton  ">Business</button>
             <button type="button" class="btn btn-secondary categorybutton">Sales</button>
             <button type="button" class="btn btn-secondary categorybutton">Job interview</button>
-            <button type="button" class="btn btn-secondary categorybutton">Pickup lines</button>
+            <button type="button" class="btn btn-secondary categorybutton">Pickup lines</button>-->
+            </form>
         </div>
     </div>
 </div>

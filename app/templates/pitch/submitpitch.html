@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{%block styles%}
+{{super()}}
+{%endblock%}
+{%block content%}
+<div class="container">
+<div class="col-md-4">
+<p>hello {{category}}</p>
+<p>hello {{name}}</p>
+<p>user_id is : {{user_id}}</p>
+            {{ wtf.quick_form(form) }}
+            
+            
+        </div>
+        </div>
+        
+{%endblock%}
