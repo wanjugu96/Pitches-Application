@@ -16,6 +16,14 @@ class DevConfig(Config):
     DEBUG=True
     TEMPLATES_AUTO_RELOAD = True
 
+    #email configurations
+    MAIL_SERVER='smtp.googlemail.com'
+    MAIL_PORT=25
+    MAIL_USE_TLS=True
+    MAIL_USERNAME=os.environ.get("MAIL_USERNAME")
+    MAIL_PASSWORD=os.environ.get("MAIL_PASSWORD")
+
+
 class TestConfig(Config):
     DEBUG=True
     TEMPLATES_AUTO_RELOAD = True

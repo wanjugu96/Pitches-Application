@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_bootstrap import Bootstrap
 from flask_uploads import UploadSet,configure_uploads,IMAGES
+from flask_mail import Mail
 #from app.models import User
 # from app import login
 
@@ -19,10 +20,13 @@ photos=UploadSet('photos',IMAGES)
 #configure UploadSet
 
 
+mail = Mail()
 
 
 def create_app(config_name):
     app= Flask(__name__)
+
+    mail.init_app(app)
 
     #creating app configurations
     app.config.from_object(config_options[config_name])

@@ -6,6 +6,7 @@ from .forms import RegistrationForm,LoginForm
 from .. import db
 from ..models import User
 from flask_login import login_user,login_required,logout_user
+from ..email import mail_message
 
 
 
@@ -16,6 +17,8 @@ def register():
         user = User(email = form.email.data, username = form.username.data,password = form.password.data)
         db.session.add(user)
         db.session.commit()
+
+        mail_message("Welcome to pitches app","email/welcome_user",user.email,user=user)
         return redirect(url_for('auth.login'))
     title = "New Account"
     return render_template('auth/register.html',registration_form = form)
