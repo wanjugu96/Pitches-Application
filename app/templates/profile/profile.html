@@ -45,7 +45,7 @@
   <hr class="my-4">
   <p>{{pitch.category}}</p>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="/" role="button">Comment on pitch</a>
+    <a class="btn btn-primary btn-lg" href="{{url_for('main.comment',category=pitch.category,pitchid=pitch.id)}}" role="button">Comment on pitch</a>
                                             
 
   </p>

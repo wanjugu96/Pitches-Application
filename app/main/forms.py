@@ -4,7 +4,7 @@ from wtforms.fields.simple import TextAreaField
 from wtforms.validators import Required,Email,EqualTo, ValidationError
  
 class UpdateProfile(FlaskForm):
-    bio=TextAreaField('Tes',validators=[Required()])
+    bio=TextAreaField('Bio',validators=[Required()])
     submit=SubmitField('Submit')
 
 class submitpitchform(FlaskForm):
