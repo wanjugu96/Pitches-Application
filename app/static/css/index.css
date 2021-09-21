@@ -13,6 +13,8 @@
     border-radius: 5%;
     padding-right: 15px;
     color: black;
+    color: #eef0f2;
+    margin: 10px;
 }
 
 .title {
@@ -20,8 +22,9 @@
     color: white;
 }
 
-.title {
-    background-color: #0E1C36
+.titlee {
+    color: #0E1C36;
+    text-decoration: underline;
 }
 
 .jumbos {

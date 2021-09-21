@@ -1,4 +1,6 @@
 from flask import render_template,request,redirect,url_for,abort
+from flask_sqlalchemy import SQLAlchemy,sqlalchemy
+from sqlalchemy.sql.expression import desc
 from . import main
 from flask_login import login_required,current_user
 from ..models import User,Pitch,Comment
